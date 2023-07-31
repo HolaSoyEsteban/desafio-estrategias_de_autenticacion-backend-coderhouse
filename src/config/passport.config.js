@@ -1,9 +1,22 @@
 import passport from 'passport';
-import UserModel from '../dao/models/user.model.js';
+import local from 'passport-local';
 import GithubStrategy from 'passport-github2';
+import UserModel from '../dao/models/user.model.js';
 
 const initializePassport = () => {
 
+    // passport.use('register', new LocalStrategy({
+    //     passReqToCallback: true,
+    //     usernameField: 'email'
+    // }, async (req, username, password, done) => {
+    //     const { first_name, last_name, email, age } = req.body;
+    //     try {
+    //         const user = await UserModel.findOne({ email: username })
+    //         if (user) return done(null, false, { message: 'El correo electrónico ya está en uso.' })
+
+    //     }
+    // }))
+    
     passport.use('github', new GithubStrategy({
         clientID: 'Iv1.406a2cb748fca137',
         clientSecret: '0911404c5380ce804ebe9cbfa5aa7d476ebbdfb7',
