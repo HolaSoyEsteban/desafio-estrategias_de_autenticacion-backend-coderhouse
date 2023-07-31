@@ -11,6 +11,8 @@ import mongoose from 'mongoose'
 import Message from './dao/models/message.model.js'
 import session from 'express-session'
 import MongoStore from 'connect-mongo'
+import passport from 'passport'
+import initializePassport from './config/passport.config.js'
 
 const PORT = 8080; // puerto en el que va a escuchar el servidor
 
@@ -32,6 +34,11 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
+
+// configuracion de passport
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
 
 // configuracion del motor de plantillas handlebars
 app.engine('handlebars', handlebars.engine());
