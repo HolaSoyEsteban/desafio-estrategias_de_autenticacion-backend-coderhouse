@@ -58,7 +58,15 @@ try {
     }); // middleware para agregar la instancia de socket.io a la request
     
     // Rutas
-    app.get('/', (req, res) => res.render('index')); // ruta raíz
+    app.get('/', (req, res) => {
+      if (req.session.user) {
+          // Si el usuario ya está autenticado, redireccionar a la vista de productos
+          res.render('index');
+      } else {
+          // Si el usuario no ha iniciado sesión, redireccionar a la vista de inicio de sesión
+          res.redirect('/login');
+      }
+    })
     
     app.use('/', viewsUserRouter); // registra el router de usuario en la ruta /
     app.use('/chat', chatRouter); // ruta para renderizar la vista de chat

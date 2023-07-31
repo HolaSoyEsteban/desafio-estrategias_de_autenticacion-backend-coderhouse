@@ -1,7 +1,7 @@
 {
   "name": "desafio-estrategias-de-autenticacion",
   "version": "1.0.0",
-  "description": "Desafio de Estrategias de autenticación en Backend",
+  "description": "Desafio de Estrategias de autenticación en Backend ... Terminado",
   "main": "src/app.js",
   "type": "module",
   "scripts": {

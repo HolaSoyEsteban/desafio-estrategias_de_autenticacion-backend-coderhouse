@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
           alert(data.message);
         }
       } catch (error) {
-        console.error("Error en la solicitud:", error);
+        console.log(`Error al analizar la respuesta JSON: , ${error.message}`);
+        console.log(`Detalles del error completo: , ${error}`);
       }
     });
   });

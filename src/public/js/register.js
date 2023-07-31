@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           alert(result.message);
         }
       } catch (error) {
-        console.error("Error al enviar la solicitud:", error.message);
+        console.error("Error al enviar la solicitud: ", error.message);
       }
     });
   });
